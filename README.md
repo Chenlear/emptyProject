@@ -1,4 +1,4 @@
-# new_ebook
+# spa页面空模板
 
 > A Vue.js project
 
