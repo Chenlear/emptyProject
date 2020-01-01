@@ -1,24 +1,32 @@
 <template>
   <div class="hello">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="@/assets/logo.png" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="@/assets/logo.png" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="@/assets/logo.png" alt="">
-        </div>
-      </div>
-    </div>
-    <van-button type="info">信息按钮</van-button>
-    <van-cell-group>
-      <van-cell title="单元格" value="内容" />
-      <van-cell title="单元格" value="内容" label="描述信息" />
-    </van-cell-group>
-    <p>{{this.$store.state.token}}</p>
+    第一页
+    <!--<div class="swiper-container">-->
+      <!--<div class="swiper-wrapper">-->
+        <!--<div class="swiper-slide">-->
+          <!--<img v-lazy="data.img" alt="">-->
+        <!--</div>-->
+        <!--<div class="swiper-slide">-->
+          <!--<img v-lazy="data.img" alt="">-->
+        <!--</div>-->
+        <!--<div class="swiper-slide">-->
+          <!--<img v-lazy="data.img" alt="">-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<img v-lazy="data.img" alt="">-->
+    <!--<img v-lazy="data.img" alt="">-->
+    <!--<img v-lazy="data.img" alt="">-->
+    <!--<img v-lazy="data.img" alt="">-->
+    <!--<img v-lazy="data.img" alt="">-->
+    <!--<img v-lazy="data.img" alt="">-->
+    <!--<img v-lazy="data.img" alt="">-->
+    <!--<van-button type="info">信息按钮</van-button>-->
+    <!--<van-cell-group>-->
+      <!--<van-cell title="单元格" value="内容" />-->
+      <!--<van-cell title="单元格" value="内容" label="描述信息" />-->
+    <!--</van-cell-group>-->
+    <!--<p>{{this.$store.state.token}}</p>-->
   </div>
 </template>
 
@@ -35,7 +43,13 @@ export default {
   },
   data () {
     return {
+      data:{
+
+      },
     }
+  },
+  created () {
+
   },
   mounted () {
     this.getInfo()
@@ -43,8 +57,9 @@ export default {
   methods: {
     async getInfo () {
       try {
-        let res = await this.$http.get('/web/service/firends/pc/info-hotContext')
+        let { code, data } = await this.$http.get(this.$api.test)
       } catch (err) {
+        console.log(err)
         this.$toast.fail(`${err.status}\n 数据请求失败`)
       }
     }
