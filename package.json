@@ -17,7 +17,7 @@
     "lib-flexible": "^0.3.2",
     "location": "0.0.1",
     "navigator": "^1.0.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "qs": "^6.9.1",
     "swiper": "^3.0.4",
     "v-tag-cloud": "^1.0.3",
